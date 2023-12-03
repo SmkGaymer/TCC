@@ -64,11 +64,14 @@
     <div class="cardapio-container">
         <h1>Cardápio do dia</h1>
         <?php
-        $cardapioid = 5;
+        $cardapioid = isset($_GET['cardapio_id']) ? $_GET['cardapio_id'] : null;
         require_once('../conf/Conexao.php');
         $conexao = Conexao::getInstance();
-        
-        $consulta2 = $conexao->query('Select * FROM cardapio WHERE idcardapio ='.$cardapioid);
+        $consulta2q = 'Select * FROM cardapio ';
+        if ($cardapioid != null){
+            $consulta2q += 'WHERE idcardapio ='.$cardapioid;
+        } 
+        $consulta2 = $conexao->query($consulta2q);
         while($linha = $consulta2->fetch(PDO::FETCH_ASSOC)){
             
          
@@ -77,11 +80,13 @@
             $dia_semana_formatado = $dia_semana[date('w', strtotime($linha['data']))];
             echo "<h1 class='data-formatada'> ".$dia_semana_formatado." (".$data_formatada.")</h1>";
         }
-
-        $consulta = $conexao->query("SELECT cardapio_alimento.*, cardapio.data, alimentos.alimento FROM cardapio_alimento join
+        $consultaq = 'SELECT cardapio_alimento.*, cardapio.data, alimentos.alimento FROM cardapio_alimento join
         cardapio on cardapio.idcardapio = cardapio_alimento.cardapio_id join
-        alimentos on alimentos.idalimentos = cardapio_alimento.alimento_id
-        WHERE cardapio_id =". $cardapioid.";");
+        alimentos on alimentos.idalimentos = cardapio_alimento.alimento_id';
+        if($cardapioid != null){
+            $consultaq += 'WHERE cardapio_id ='. $cardapioid;
+        }
+        $consulta = $conexao->query($consultaq);
 
         ?>
         <table class="table">

@@ -19,7 +19,7 @@ if ($acao == 'salvar') {
                 $cardapio_alimento->inserir();
             }
         }
-        header('location:show.php');
+        header('location:show.php?id='.$id);
         exit();
     } catch (Exception $e) {
         echo "Erro ao inserir/editar: " . $e->getMessage();
@@ -30,7 +30,7 @@ if ($acao == 'salvar') {
 
         if ($cardapio_alimento->excluir()) {
            
-            header('location:show.php');
+            header('location:show.php?id='.$id);
             exit();
         } else {
             
