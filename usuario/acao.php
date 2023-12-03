@@ -1,13 +1,12 @@
 <?php
 require_once "../conf/Conexao.php";
 require_once('../classes/database.class.php');
-    
-function findById($idalimentos) {
+
+function findById($idusuario) {
     $conexao = Conexao::getInstance();
-    $stmt = $conexao->prepare("SELECT * FROM alimentos WHERE idalimentos = ?");
-    $stmt->execute([$idalimentos]);
+    $stmt = $conexao->prepare("SELECT * FROM usuarios WHERE idusuario = ?");
+    $stmt->execute([$idusuario]);
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     return $result; 
 }
 ?>
-

@@ -1,5 +1,6 @@
 <?php
-require_once('../classes/database.class.php');  
+require_once('../classes/database.class.php');
+
 class Alimento{
     private $idalimentos;
     private $alimento;
@@ -39,15 +40,15 @@ class Alimento{
         return Database::executar($sql, $params);
     }
 
-  public function excluir() {
-    $sql = 'DELETE FROM alimentos
-            WHERE idalimentos = :idalimentos';
-    $params = array(':idalimentos' => $this->getId());
+    public function excluir() {
+        $sql = 'DELETE FROM alimentos
+                WHERE idalimentos = :idalimentos';
+        $params = array(':idalimentos' => $this->getId());
 
-   
-    return Database::executar($sql, $params);
-}
-public function editar() {
+        return Database::executar($sql, $params);
+    }
+
+    public function editar() {
         $sql = 'UPDATE alimentos
                 SET alimento = :alimento
                 WHERE idalimentos = :idalimentos';
@@ -58,6 +59,7 @@ public function editar() {
 
         return Database::executar($sql, $params);
     }
+
     public static function listar() {
         $sql = 'SELECT * FROM alimentos';
 

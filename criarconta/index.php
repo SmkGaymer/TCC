@@ -4,6 +4,8 @@
 
     <?php
     require_once "../conf/Conexao.php";
+    include '../usuario/acao.php';
+    include '../header.php';
 
 
     $acao = isset($_GET['acao']) ? $_GET['acao'] : '';
@@ -46,8 +48,8 @@
         </div>
             <div class="col-5">
             <input type="text" class="form-control" value="<?php if ($acao == 'editar') echo $dados['turma']?>" name="turma" id="turma" placeholder="Turma:"> <br>
-            <input type="password" class="form-control" value="<?php if ($acao == 'editar') echo "";?>" name="senha" id="senha" placeholder="Senha:"> <br>
-            <input type="password" class="form-control" value="<?php if ($acao == 'editar') echo "";?>" name="confirmarSenha" id="confirmarSenha" placeholder="Comfirmar Senha:"> <br>
+            <input type="password" class="form-control" value="<?php if ($acao == 'editar') echo ""; ?>" name="senha" id="senha" placeholder="Senha:"> <br>
+<input type="password" class="form-control" value="<?php if ($acao == 'editar') echo ""; ?>" name="confirmarSenha" id="confirmarSenha" placeholder="Comfirmar Senha:"> <br>
             <input name="alergias" class="form-control" value="<?php if ($acao == 'editar') echo $dados['alergias']?>" id="alergias" placeholder="Alergias:"> <br>
             <input name="cpf" class="form-control" value="<?php if ($acao == 'editar') echo $dados['cpf']?>" id="cpf" placeholder="CPF:"> <br>
         </div>

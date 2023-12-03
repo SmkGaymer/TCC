@@ -49,7 +49,7 @@
                         <td>".$linha["alergias"]."</td>
                         <td>
                             <a class='btn btn-danger btn-sm' onClick='return excluir();' href='acaousuario.php?acao=excluir&idusuario=".$linha['idusuario']."'>Excluir</a>
-                            <a class='btn btn-warning btn-sm' href='acaoalimento.php?acao=editar&idusuario=".$linha['idusuario']."'>Editar</a>
+                            <a class='btn btn-warning btn-sm' href='acaousuario.php?acao=editar&idusuario=".$linha['idusuario']."'>Editar</a>
                         </td>
                         </tr>\n";
                     }

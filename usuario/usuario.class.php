@@ -66,6 +66,7 @@ class Usuario {
             $this->idusuario = $idusuario;
         }
     }
+    
 
     public function setNome($nome) {
         if (!empty($nome)) {
