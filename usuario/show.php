@@ -21,7 +21,7 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th scope="col">Código</th>
+                        <th scope="col">Códigooo</th>
                         <th scope="col">Nome</th>
                         <th scope="col">Turma</th>
                         <th scope="col">Matrícula</th>
