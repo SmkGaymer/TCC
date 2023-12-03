@@ -1,5 +1,4 @@
 <?php
-require_once "../conf/Conexao.php";
 require_once('../classes/database.class.php'); 
 
 class Usuario {
