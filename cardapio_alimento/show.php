@@ -56,6 +56,10 @@
             font-size: 18px;
             margin-top: 10px;
         }
+        .btn-verde {
+    background-color: #4CAF50;
+    color: #fff;
+}
     </style>
     
 </head>
@@ -109,38 +113,25 @@
         </table>
         <br>
         <h1>Você irá comer hoje?</h1>
+        <form action="contagem.php" method="post">
         <p class="mensagem" id="mensagem">Almoço contado com sucesso!</p>
-        <button id="contadorBtn" class="btn btn-success">Sim</button>
-        <button id="fodase" class="btn btn-danger-custom">Não</button>
-        <p class="contador" id="contador">0</p>
-    </div>
-    
-    <script>
-        function excluir() {
-            return confirm('Tem certeza que deseja excluir este registro?');
-        }
+        <input type="submit" id="contadorBtn" class="btn btn-verde" name="incrementar" value="Sim">
+<button class="btn btn-danger-custom">Não</button> <!-- Removido o atributo onclick -->
 
-        var contador = 0;
-        var contadorElement = document.getElementById("contador");
-        var contadorBtn = document.getElementById("contadorBtn");
-        var fodaseBtn = document.getElementById("fodase");
-        var mensagemElement = document.getElementById("mensagem");
+<p class="contador" id="contador"></p>
+</div>
+</form>
 
-        contadorBtn.addEventListener("click", function() {
-            contador++;
-            contadorElement.textContent = contador;
-            exibirMensagem();
-        });
+<script>
+    function excluir() {
+        return confirm('Tem certeza que deseja excluir este registro?');
+    }
 
-        fodaseBtn.addEventListener("click", function() {
-            exibirMensagem();
-        });
-
-        function exibirMensagem() {
-            contadorBtn.style.display = "none";
-            fodaseBtn.style.display = "none";
-            mensagemElement.style.display = "block";
-        }
-    </script>
+    // Adicionado o evento onclick para o botão "Não"
+    document.querySelector('.btn-danger-custom').onclick = function() {
+        // Permanece na mesma página
+        return false;
+    };
+</script>
 </body>
 </html>

@@ -1,4 +1,5 @@
 <?php
+require_once "../conf/Conexao.php";
 require_once('../classes/database.class.php'); 
 
 class Usuario {
@@ -65,7 +66,6 @@ class Usuario {
             $this->idusuario = $idusuario;
         }
     }
-    
 
     public function setNome($nome) {
         if (!empty($nome)) {

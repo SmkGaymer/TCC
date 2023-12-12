@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
     <?php
     include "../header.php";
+    require_once "../cardapio_alimento/contagem.php";
     ?>
     <style>
         body {
@@ -63,34 +64,14 @@
     
                 </tr>
                 <tr>
-                    <td>Não Intolerantes</td>
-                    <td>78</td>
+                    <td>Sem intolerância</td>
+                    <td><?php echo $contagemAtual; ?></td>
                  
-                </tr>
-                <tr>
-                    <td>Veganos</td>
-                    <td>5</td>
-                   
-                </tr>
-                <tr>
-                    <td>Vegetarianos</td>
-                    <td>23</td>
-                   
-                </tr>
-                <tr>
-                    <td>Intolerantes a Lactose</td>
-                    <td>12</td>
-                  
-                </tr>
-                <tr>
-                    <td>Intolerantes a Glúten</td>
-                    <td>24</td>
-                    
                 </tr>
             </table>
             
             <div class="text-center mt-4">
-                <p class="total-title">Total de Alunos: <br> 142</p>
+                <p class="total-title">Total de Alunos: <br> <?php echo $contagemAtual; ?> </p>
             </div>
             
                     

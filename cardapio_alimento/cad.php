@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<?php
+
+include '../header.php';
+
+?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="grid/simple-grid.min.css" rel="stylesheet">
@@ -65,11 +70,15 @@
 
             <select name="cardapio_id" id="cardapio_id">
                 <?php
+                
                 while($linha = $cardapios->fetch(PDO::FETCH_ASSOC)){
-                    echo '<option value="'. $linha['idcardapio'].'">'.$linha['data'].'</option>';
+                    $dataFormatada = date_create($linha['data'])->format('d/m/Y');
+                    echo '<option value="'. $linha['idcardapio'].'">'.$dataFormatada.'</option>';
                 }
                 ?>
+        
             </select>
-            <button type="submit" value="salvar" name="acao" id="acao">Salvar</button>
+            <button type="submit" value="salvar" name="acao" id="acao" style="background-color: #28a745; color: #fff;">Salvar</button>
+
         </form>
     </div

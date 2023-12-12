@@ -35,10 +35,6 @@
                         <label for="data">Data:</label>
                         <input type="date" class="form-control" name="data" id="data" value="<?php if ($acao == 'editar') echo $dados['data']?>">
                     </div>
-                    <div class="form-group">
-                        <label for="diasemana">Dia da Semana:</label>
-                        <input type="date" class="form-control" name="diasemana" id="diasemana" value="<?php if ($acao == 'editar') echo $dados['data']?>">
-                    </div>
                     <input class="btn btn-success" type="submit" value="salvar" name="acao" id="acao">ﾠﾠﾠ
                 </form>
             </div>
